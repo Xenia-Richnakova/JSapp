@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body style="background-size: 100%; background-image: url('juchuchu.jpg');">
+    
+<h1 style="color: aliceblue;">Uz nevadi ked si slepy kokot</h1>
+
+<form style="margin-bottom: 20px">
+<input placeholder="celzius" id="celzius"/>
+
+<button onclick="myFun()">submit</button>
+</form>
+
+<form >
+    <input placeholder="word" id="word"/>
+    <button onclick="isPalindrom()">check</button>
+</form>
+
+    <p style="color: aliceblue;" id="outputPalindrom"></p>
+
+<script>
+    let celzius = document.getElementById("celzius");
+
+    var result = (document.getElementById("celzius").value * (9/5)) + 32
+    function myFun(){
+       alert("the result is " + result);
+    }
+
+    
+    function isPalindrom(){
+        event.preventDefault()
+
+        var inputWord = document.getElementById("word").value
+        var number = inputWord.length
+        var output = document.getElementById('outputPalindrom')
+        
+        for (let index = 0; index < inputWord.length/2; index++) {
+  
+            if (inputWord[index] != inputWord[number-1]) {
+                output.innerText = "Not Palindrom"
+                return
+            }
+            number--
+        }
+        
+        output.innerText = "Is Palindrom";    
+    }
+ </script> 
+
+
+</body>
+</html>
